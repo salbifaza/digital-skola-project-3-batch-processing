@@ -5,3 +5,9 @@ Command
 ```
 pip install --no-cache-dir -r requirements.txt
 ```
+
+IF current transaction is aborted
+```
+cur.execute("ROLLBACK")
+conn.commit()
+```
