@@ -2,7 +2,6 @@
 import os
 import psycopg2
 
-
 # ---------- Connect to postgresql ----------
 conn = psycopg2.connect("host = localhost dbname = postgres user = postgres password= admin")
 cur = conn.cursor()
