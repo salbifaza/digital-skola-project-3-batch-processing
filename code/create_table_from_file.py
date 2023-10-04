@@ -10,8 +10,16 @@ file_path = path + file
 
 # ---------- Open File Use Pandas & Use Engine SQL Alchemy ----------
 df = pd.read_csv(file_path, sep = ',')
-engine = create_engine('postgresql://postgres:admin@127.0.0.1:5432/postgres')
-df.to_sql("from_file_table",engine)
+
+user        = 'postgres'
+password    = 'admin'
+hostname    = '127.0.0.1'
+database    = 'postgres'
+
+conn_string = f'postgresql://{user}:{password}@{hostname}:5432/{database}'
+engine = create_engine(conn_string)
+
+df.to_sql("from_file_table",engine, if_exists='replace')
 
 # ---------- Check the Data ---------- 
 conn    = engine.connect()
