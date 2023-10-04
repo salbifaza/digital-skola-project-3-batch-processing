@@ -17,16 +17,14 @@ hostname    = '127.0.0.1'
 database    = 'postgres'
 
 conn_string = f'postgresql://{user}:{password}@{hostname}:5432/{database}'
-engine = create_engine(conn_string)
+engine      = create_engine(conn_string)
+conn        = engine.connect()
 
 df.to_sql("from_file_table",engine, if_exists='replace')
 
 # ---------- Check the Data ---------- 
-conn    = engine.connect()
 query   = "SELECT * FROM from_file_table"
 result  = conn.execute(text(query))
-
-# ---------- Print Result ---------- 
 for row in result:
     print(row)
 
