@@ -24,7 +24,7 @@ path      = os.getcwd()
 file      = '/source/users_w_postal_code.csv'
 file_path = path + file
 
-# ---------- Open File Use CSV Reader ---------- 
+# ---------- Open File Use CSV Reader & Use Cursor Executor ---------- 
 with open(file_path,'r') as f:
     csv_reader = csv.reader(f, delimiter = ',')
     next(csv_reader)

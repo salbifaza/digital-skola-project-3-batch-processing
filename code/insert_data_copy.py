@@ -23,7 +23,7 @@ path      = os.getcwd()
 file      = '/source/users_w_postal_code.csv'
 file_path = path + file
 
-# ---------- Open File Use Copy From  ---------- 
+# ---------- Open File & Use Copy From ---------- 
 with open(file_path,'r') as f:
     next(f)
     cur.copy_from(f, 'tbl_user_copy', sep=',', columns=('email','name','phone','postal_code'))
