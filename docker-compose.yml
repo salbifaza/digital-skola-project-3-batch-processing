@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  postgresql:
+    image: postgres:latest
+    hostname: postgresql
+    container_name: ${CONTAINER_PREFIX:-my}-postgresql
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      POSTGRES_DB: ${POSTGRES_DB:-mydb}
+    volumes:
+    - ./postgres-data:/var/lib/postgresql/data
+    ports:
+    - ${POSTGRES_HOST_PORT:-5432}:5432
