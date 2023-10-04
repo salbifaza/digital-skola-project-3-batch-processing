@@ -20,13 +20,12 @@ conn_string = f'postgresql://{user}:{password}@{hostname}:5432/{database}'
 engine      = create_engine(conn_string)
 conn        = engine.connect()
 
-df.to_sql("from_file_table",engine, if_exists='replace', index=False)
+df.to_sql("from_file_table",engine, if_exists='replace')
 
 # ---------- Check the Data ---------- 
 query   = "SELECT * FROM from_file_table"
-result  = conn.execute(text(query))
-for row in result:
-    print(row)
+df_read = pd.read_sql(query,engine)
+print(df_read)
 
 # ---------- Close the Connection ---------- 
 conn.close()
