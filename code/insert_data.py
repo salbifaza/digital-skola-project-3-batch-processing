@@ -37,8 +37,7 @@ conn.commit()
 
 # ---------- Check the Data ---------- 
 cur.execute("""
-            SELECT * FROM tbl_user_copy
-            )
+            SELECT * FROM tbl_user
         """
 )
 cur.fetchall()
