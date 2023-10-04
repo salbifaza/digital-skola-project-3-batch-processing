@@ -24,7 +24,7 @@ path      = os.getcwd()
 file      = '/source/users_w_postal_code.csv'
 file_path = path + file
 
-# ---------- Open File ---------- 
+# ---------- Open File Use CSV Reader ---------- 
 with open(file_path,'r') as f:
     csv_reader = csv.reader(f, delimiter = ',')
     next(csv_reader)
@@ -34,3 +34,11 @@ with open(file_path,'r') as f:
          row
       )
 conn.commit()
+
+# ---------- Check the Data ---------- 
+cur.execute("""
+            SELECT * FROM tbl_user_copy
+            )
+        """
+)
+cur.fetchall()
