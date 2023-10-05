@@ -46,7 +46,7 @@ grep "compose/releases/tag" | sed -r 's|.*([0-9]+\.[0-9]+\.[0-9]+).*|\1|p' | hea
 
 ```
 
-3. Install the required python package
+3. Install required python package
 ```
 # (optional) 
 sudo apt install python3-pip 
@@ -64,6 +64,7 @@ docker compose up --build
 5. Run script in directory code
 
 
+## Others
 
 Command to Execute Inside Postgres Container
 ```
