@@ -48,7 +48,7 @@ grep "compose/releases/tag" | sed -r 's|.*([0-9]+\.[0-9]+\.[0-9]+).*|\1|p' | hea
 
 3. Install required python package
 ```
-# (optional) 
+# required if you haven't install pip  
 sudo apt install python3-pip 
 
 # install required python package
